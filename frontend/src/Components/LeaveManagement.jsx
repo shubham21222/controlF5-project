@@ -16,7 +16,7 @@ function LeaveManagement() {
 
   const fetchLeaveRequests = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/leave-requests');
+      const response = await axios.get('http://13.60.3.73:5000/leave-requests');
       setLeaveRequests(response.data);
     } catch (error) {
       console.error('Error fetching leave requests:', error);
@@ -25,7 +25,7 @@ function LeaveManagement() {
 
   const addLeaveRequest = async () => {
     try {
-      await axios.post('http://127.0.0.1:5000/leave-requests', newLeaveRequest);
+      await axios.post('http://13.60.3.73:5000/leave-requests', newLeaveRequest);
       fetchLeaveRequests();
       setNewLeaveRequest({
         leave_type: '',

@@ -19,7 +19,7 @@ function EmployeeDirectory() {
 
   const fetchEmployees = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/employees');
+      const response = await axios.get('http://13.60.3.73:5000/employees');
       setEmployees(response.data);
     } catch (error) {
       console.error('Error fetching employees:', error);
@@ -28,7 +28,7 @@ function EmployeeDirectory() {
   
   const addEmployee = async () => {
     try {
-      await axios.post('http://127.0.0.1:5000/employees', newEmployee);
+      await axios.post('http://13.60.3.73:5000/employees', newEmployee);
       fetchEmployees();
       setNewEmployee({
         name: '',
@@ -44,7 +44,7 @@ function EmployeeDirectory() {
 
   const editEmployee = async () => {
     try {
-      await axios.put(`http://127.0.0.1:5000/employees/${editEmployeeData.id}`, editEmployeeData);
+      await axios.put(`http://13.60.3.73:5000/employees/${editEmployeeData.id}`, editEmployeeData);
       fetchEmployees();
       setEditEmployeeData(null);
     } catch (error) {
@@ -54,7 +54,7 @@ function EmployeeDirectory() {
 
   const deleteEmployee = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/employees/${id}`);
+      await axios.delete(`http://13.60.3.73:5000/employees/${id}`);
       fetchEmployees();
     } catch (error) {
       console.error('Error deleting employee:', error);

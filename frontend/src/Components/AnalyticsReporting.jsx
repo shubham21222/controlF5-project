@@ -16,7 +16,7 @@ function AnalyticsReporting() {
 
   const fetchEmployeeDemographics = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/analytics/employee-demographics');
+      const response = await axios.get('http://13.60.3.73:5000/analytics/employee-demographics');
       setEmployeeDemographics(response.data);
     } catch (error) {
       console.error('Error fetching employee demographics:', error);
@@ -25,7 +25,7 @@ function AnalyticsReporting() {
 
   const fetchRecruitmentMetrics = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/analytics/recruitment-metrics');
+      const response = await axios.get('http://13.60.3.73:5000/analytics/recruitment-metrics');
       setRecruitmentMetrics(response.data);
     } catch (error) {
       console.error('Error fetching recruitment metrics:', error);
@@ -34,7 +34,7 @@ function AnalyticsReporting() {
 
   const fetchPerformanceEvaluation = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/analytics/performance-evaluation');
+      const response = await axios.get('http://13.60.3.73:5000/analytics/performance-evaluation');
       setPerformanceEvaluation(response.data);
     } catch (error) {
       console.error('Error fetching performance evaluation:', error);
@@ -43,7 +43,7 @@ function AnalyticsReporting() {
 
   const fetchLeaveTrends = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/analytics/leave-trends');
+      const response = await axios.get('http://13.60.3.73:5000/analytics/leave-trends');
       setLeaveTrends(response.data);
     } catch (error) {
       console.error('Error fetching leave trends:', error);

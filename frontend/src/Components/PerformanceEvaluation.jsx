@@ -12,7 +12,7 @@ function PerformanceEvaluation() {
 
   const fetchEvaluationForms = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/evaluation-forms');
+      const response = await axios.get('http://13.60.3.73:5000/evaluation-forms');
       setEvaluationForms(response.data);
     } catch (error) {
       console.error('Error fetching evaluation forms:', error);
@@ -21,7 +21,7 @@ function PerformanceEvaluation() {
 
   const fetchEvaluations = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/evaluations');
+      const response = await axios.get('http://13.60.3.73:5000/evaluations');
       setEvaluations(response.data);
     } catch (error) {
       console.error('Error fetching evaluations:', error);
@@ -36,7 +36,7 @@ function PerformanceEvaluation() {
       ratingScale: formData.get('ratingScale')
     };
     try {
-      await axios.post('http://127.0.0.1:5000/evaluation-forms', newEvaluationForm);
+      await axios.post('http://13.60.3.73:5000/evaluation-forms', newEvaluationForm);
       fetchEvaluationForms();
     } catch (error) {
       console.error('Error creating evaluation form:', error);
@@ -52,7 +52,7 @@ function PerformanceEvaluation() {
       status: 'Pending'
     };
     try {
-      await axios.post('http://127.0.0.1:5000/evaluations', newEvaluation);
+      await axios.post('http://13.60.3.73:5000/evaluations', newEvaluation);
       fetchEvaluations();
     } catch (error) {
       console.error('Error assigning evaluation:', error);
@@ -61,7 +61,7 @@ function PerformanceEvaluation() {
 
   const handleUpdateEvaluationStatus = async (evaluationId, status) => {
     try {
-      await axios.put(`http://127.0.0.1:5000/evaluations/${evaluationId}`, { status });
+      await axios.put(`http://13.60.3.73:5000/evaluations/${evaluationId}`, { status });
       fetchEvaluations();
     } catch (error) {
       console.error('Error updating evaluation status:', error);
@@ -70,7 +70,7 @@ function PerformanceEvaluation() {
 
   const handleProvideFeedback = async (evaluationId, feedback) => {
     try {
-      await axios.post(`http://127.0.0.1:5000/evaluations/${evaluationId}/feedback`, { feedback });
+      await axios.post(`http://13.60.3.73:5000/evaluations/${evaluationId}/feedback`, { feedback });
       fetchEvaluations();
     } catch (error) {
       console.error('Error providing feedback:', error);

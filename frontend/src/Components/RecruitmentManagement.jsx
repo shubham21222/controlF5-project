@@ -14,7 +14,7 @@ function RecruitmentManagement() {
 
   const fetchJobPostings = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/job-postings');
+      const response = await axios.get('http://13.60.3.73:5000/job-postings');
       setJobPostings(response.data);
     } catch (error) {
       console.error('Error fetching job postings:', error);
@@ -23,7 +23,7 @@ function RecruitmentManagement() {
 
   const fetchApplicants = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/applicants');
+      const response = await axios.get('http://13.60.3.73:5000/applicants');
       setApplicants(response.data);
     } catch (error) {
       console.error('Error fetching applicants:', error);
@@ -32,7 +32,7 @@ function RecruitmentManagement() {
 
   const fetchInterviews = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/interviews');
+      const response = await axios.get('http://13.60.3.73:5000/interviews');
       setInterviews(response.data);
     } catch (error) {
       console.error('Error fetching interviews:', error);
@@ -49,7 +49,7 @@ function RecruitmentManagement() {
       deadline: formData.get('deadline')
     };
     try {
-      await axios.post('http://127.0.0.1:5000/job-postings', newJobPosting);
+      await axios.post('http://13.60.3.73:5000/job-postings', newJobPosting);
       fetchJobPostings();
     } catch (error) {
       console.error('Error adding job posting:', error);
@@ -65,7 +65,7 @@ function RecruitmentManagement() {
       resume: formData.get('resume')
     };
     try {
-      await axios.post('http://127.0.0.1:5000/applicants', newApplicant);
+      await axios.post('http://13.60.3.73:5000/applicants', newApplicant);
       fetchApplicants();
     } catch (error) {
       console.error('Error adding applicant:', error);
@@ -80,7 +80,7 @@ function RecruitmentManagement() {
       dateTime: formData.get('dateTime')
     };
     try {
-      await axios.post('http://127.0.0.1:5000/interviews', newInterview);
+      await axios.post('http://13.60.3.73:5000/interviews', newInterview);
       fetchInterviews();
     } catch (error) {
       console.error('Error scheduling interview:', error);

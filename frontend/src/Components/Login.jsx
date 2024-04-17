@@ -8,7 +8,7 @@ function Login({ setUserRole }) {
 
   const handleLogin = async (role) => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/login', { email, password });
+      const response = await axios.post('http://13.60.3.73:5000/login', { email, password });
       const { token } = response.data;
       localStorage.setItem('token', token);
       localStorage.setItem('userRole', role);
